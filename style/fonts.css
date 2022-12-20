@@ -1,0 +1,28 @@
+@font-face {
+    font-family: 'Didot-Bold';
+    src: url(../fonts/Didot-Bold.ttf);
+}
+@font-face {
+    font-family: 'Didot-Regular';
+    src: url(../fonts/Didot-Regular.ttf);
+}
+@font-face {
+    font-family: 'Inter-ExtraBold';
+    src: url(../fonts/Inter-ExtraBold.ttf);
+}
+@font-face {
+    font-family: 'Inter-Regular';
+    src: url(../fonts/Inter-Regular.ttf);
+}
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: url(../fonts/Roboto-Bold.ttf);
+}
+@font-face {
+    font-family: 'SedanSC-Regular';
+    src: url(../fonts/SedanSC-Regular.ttf);
+}
+@font-face {
+    font-family: 'ViaodaLibre-Regular';
+    src: url(../fonts/ViaodaLibre-Regular.ttf);
+}
