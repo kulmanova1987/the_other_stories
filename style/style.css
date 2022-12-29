@@ -850,7 +850,8 @@ margin-bottom: 25px; */
     margin-top: 210px;
 }
 
-.swiper-wrapper {
+
+.slider_list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -859,17 +860,17 @@ margin-bottom: 25px; */
     column-gap: 100px;
 }
 
-.swiper-slide {
+.slider_list li{
     max-width: 255px;
     width: 100%;
 }
 
-.swiper-slide:nth-of-type(6) {
+.slider_list li:nth-of-type(6) {
     max-width: 73px;
     width: 100%;
 }
 
-.swiper-slide img {
+.slider_list li img {
     width: 100%;
     object-fit: cover;
 }
@@ -1008,28 +1009,76 @@ margin-bottom: 25px; */
 .modal.active{
     transform: scale(1);
 }
-.modal-content{
-    background: white;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: max-content;  
-    padding: 25px;
-    transition: 1s;
-    transform: scale(0);
-    margin:auto;
+
+.close_btn{
+    position: absolute;
+    height: 30px;
+    width: 35px;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
 }
-.modal-content.active{
-    transform: scale(1);
-}
-.modal-content a {
-    height: 100%;
-}
-.modal-content a img{
+.close_btn span{
+    position: absolute;
+    height: 2px;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    right: 0;
+    top: 0;
+    background: #FFFFFF;
+    transform: rotate(45deg);
+    cursor: pointer;
 }
+.close_btn span::before{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    right: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    transform: rotate(-90deg);
+    cursor: pointer;
+}
+
+
+
+.swiper {
+    width: 50%;
+    height: max-content;
+   
+  }
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    /* height: 100%; */
+    object-fit: cover;
+  }
+   .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    margin: auto;
+  }
+  /* .swiper {
+    margin-left: auto;
+    margin-right: auto;
+  }  */
+  .swiper-button-next, .swiper-button-prev{
+    color: #FFFFFF;
+  }
+  .swiper-pagination-bullet{
+    background: #ffffffdc;
+  }

@@ -83,24 +83,26 @@ if (animItems.length > 0) {
    let workImages = document.querySelectorAll('.work_content');
    let img = document.querySelectorAll('.work_content a img')
    let modal = document.querySelector('.modal');
-   let modalContent = document.querySelector('.modal-content');
-   let modalContentImg = document.querySelector('.modal-content a img');
+   let closeBtn = document.querySelector('.close_btn');
+  
    
   
    
    for (let i = 0; i < workImages.length; i++) {
     workImages[i].addEventListener('click', (e)=>{
       e.preventDefault();
-      modalContentImg.src = img[i].src;
+      
       modal.classList.add('active');
-      modalContent.classList.add('active');
     })
    }
    
-   modal.addEventListener('click', function() {
-    modalContent.classList.remove('active');
-    modal.classList.remove('active');
-   })
+   if (closeBtn) {
+    closeBtn.addEventListener('click', function() {
+      // modalContent.classList.remove('active');
+      modal.classList.remove('active');
+     })
+   }
+   
 
 /*input range*/
 for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
@@ -112,3 +114,17 @@ for (let e of document.querySelectorAll('input[type="range"].slider-progress')) 
 
 /**********************************************************************************/
 
+/*Swiper */
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
