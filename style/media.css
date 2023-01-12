@@ -377,9 +377,8 @@
     }
     .works__content-right{
         padding-left: 50px;
-    }
-    .work_content{
-        height: 150px;
+        grid-template-columns: 1fr 1fr;
+    padding-bottom: 15px;
     }
 }
 
@@ -642,8 +641,11 @@
         padding-left: 15px;
     }
     .work_content.anim_text{
-        width: 205px;
+        width: 100%;
         margin: auto;
+    }
+    .works__content-right{
+        grid-template-columns: 1fr;
     }
 }
 

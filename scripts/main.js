@@ -18,8 +18,8 @@ if (animItems.length > 0) {
         }
   
         if (
-          pageYOffset > animItemOffset - animItemPoint &&
-          pageYOffset < animItemOffset + animItemHeight
+          pageYOffset >= animItemOffset - animItemPoint &&
+          pageYOffset <= animItemOffset + animItemHeight 
         ) {
           animItem.classList.add("active");
         } else {
@@ -41,7 +41,10 @@ if (animItems.length > 0) {
   }, 300);
 
   }
- 
+
+
+
+
   // mobile menu
   
   let burger = document.querySelector('.burger'),
@@ -64,35 +67,30 @@ if (animItems.length > 0) {
         
     }
     
-  //work gallery
-   let images = document.querySelectorAll('.work_content img');
-   for (let i = 0; i < images.length; i++) {
-    if(i % 2 == 0){
-      images[i].style = `
-      transform:translateY(-250px);
-      `
-    } 
-    else{
-      images[i].style = `
-      transform:translateX(-265px);
-      `
-    }
-   }
  
+  
    // modal window
    let workImages = document.querySelectorAll('.work_content');
    let img = document.querySelectorAll('.work_content a img')
    let modal = document.querySelector('.modal');
    let closeBtn = document.querySelector('.close_btn');
+   let modalImg = document.querySelector('.swiper-slide img');
   
    
   
-   
-   for (let i = 0; i < workImages.length; i++) {
-    workImages[i].addEventListener('click', (e)=>{
-      e.preventDefault();
-      
-      modal.classList.add('active');
+   if (workImages) {
+    for (let i = 0; i < workImages.length; i++) {
+      workImages[i].addEventListener('click', (e)=>{
+        e.preventDefault();
+        modal.classList.add('active');
+        modalImg.src = img[i].src;
+      })
+     }
+   }
+  
+   if (modal) {
+    modal.addEventListener('click', function(){
+      this.classList.remove('active');
     })
    }
    
@@ -115,16 +113,16 @@ for (let e of document.querySelectorAll('input[type="range"].slider-progress')) 
 /**********************************************************************************/
 
 /*Swiper */
-var swiper = new Swiper(".mySwiper", {
-  slidesPerView: 1,
-  spaceBetween: 30,
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-});
+// var swiper = new Swiper(".mySwiper", {
+//   slidesPerView: 1,
+//   spaceBetween: 30,
+//   loop: true,
+//   pagination: {
+//     el: ".swiper-pagination",
+//     clickable: true,
+//   },
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+// });
